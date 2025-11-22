@@ -1,0 +1,14 @@
+# Environnement virtuel
+venv/
+.env/
+.venv/
+
+# Fichiers compilés
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Configurations locales
+*.sqlite3
+*.log
