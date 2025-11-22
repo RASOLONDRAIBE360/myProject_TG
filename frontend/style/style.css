@@ -1,0 +1,246 @@
+/* --- 1. GÉNÉRAL ET TYPOGRAPHIE --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #3f51b5;
+    color: white;
+    padding: 20px 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2,
+h3 {
+    color: #333;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 1.2em;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+    color: #3f51b5;
+}
+
+/* --- 2. LAYOUT PRINCIPAL (Flexbox) --- */
+.main-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+.controls-panel {
+    flex: 0 0 300px;
+}
+
+.graph-area {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* --- 3. CONTROLES ET FORMULAIRES --- */
+.control-box {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+/* --- 4. BOUTONS (Bases et Couleurs) --- */
+.action-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.primary-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #43a047;
+}
+
+.secondary-btn {
+    background-color: #ff9800;
+    color: white;
+}
+
+.secondary-btn:hover {
+    background-color: #fb8c00;
+}
+
+/* --- 5. ZONE SVG ET RÉSULTATS --- */
+#wastegraph-svg {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    margin-top: 20px;
+}
+
+#results-output {
+    padding: 10px;
+    border: 1px dashed #ccc;
+    border-radius: 4px;
+    min-height: 50px;
+    font-size: 0.9em;
+    margin-top: 15px;
+}
+
+.status-message {
+    color: #777;
+}
+
+/* --- 6. STYLES SVG --- */
+#wastegraph-svg line {
+    transition: stroke-width 0.3s, stroke 0.3s;
+}
+
+.highlighted-path {
+    stroke: #d32f2f !important;
+    stroke-width: 5 !important;
+}
+
+/* Nœuds par défaut - cercles blancs avec bordure noire */
+#wastegraph-svg circle.graph-node {
+    fill: white;
+    stroke: #333;
+    stroke-width: 2;
+    transition: all 0.3s;
+}
+
+#wastegraph-svg circle.graph-node:hover {
+    stroke-width: 3;
+    stroke: #2196F3;
+}
+
+/* Labels des nœuds */
+#wastegraph-svg text.node-label {
+    fill: #333;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Couleurs pour le coloriage */
+.color-0 {
+    fill: #FF5733 !important;
+    stroke: #C70039 !important;
+}
+
+.color-1 {
+    fill: #33FF57 !important;
+    stroke: #28B463 !important;
+}
+
+.color-2 {
+    fill: #3357FF !important;
+    stroke: #2E86C1 !important;
+}
+
+.color-3 {
+    fill: #F1C40F !important;
+    stroke: #D4AC0D !important;
+}
+
+.color-4 {
+    fill: #8E44AD !important;
+    stroke: #7D3C98 !important;
+}
+
+.color-5 {
+    fill: #E67E22 !important;
+    stroke: #D35400 !important;
+}
+
+/* --- 7. TOAST NOTIFICATIONS --- */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #d32f2f;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 10000;
+    animation: slideIn 0.3s ease-out, slideOut 0.3s ease-in 29.7s;
+    opacity: 0;
+}
+
+.toast.success {
+    background-color: #4caf50;
+}
+
+.toast.info {
+    background-color: #2196F3;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+}
+
+.constraint-label {
+    fill: #d32f2f;
+    font-weight: bold;
+    font-size: 12px;
+}

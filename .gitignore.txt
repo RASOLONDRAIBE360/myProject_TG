@@ -1,7 +1,5 @@
 # Environnement virtuel
-venv/
-.env/
-.venv/
+venv_temp/
 
 # Fichiers compilés
 __pycache__/

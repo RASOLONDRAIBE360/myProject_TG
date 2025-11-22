@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WasteGraph | Planification Logistique</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>WasteGraph 🗑️</h1>
+        <p>Visualisation et optimisation des itinéraires de collecte par la Théorie des Graphes.</p>
+        <button class="action-btn" onclick="resetGraph()"
+            style="background-color: #d32f2f; color: white; width: auto; padding: 5px 10px; margin-top: 5px;">🔄
+            Réinitialiser le Graphe</button>
+    </header>
+
+    <div class="main-container">
+
+        <aside class="controls-panel">
+
+            <!-- Modes d'édition -->
+            <div class="control-box">
+                <h3>Édition du Graphe</h3>
+
+                <!-- Actions sur les Nœuds -->
+                <h4 style="margin-top: 15px; margin-bottom: 10px; color: #4caf50; font-size: 0.95em;">🔵 Actions sur les
+                    Nœuds</h4>
+                <button id="mode-add-btn" class="action-btn primary-btn" onclick="setMode('add')">➕ Ajouter
+                    Nœud</button>
+                <button id="mode-rename-btn" class="action-btn primary-btn" onclick="setMode('rename')"
+                    style="background-color: #ff9800; margin-top: 10px;">✏️ Renommer Nœud</button>
+                <button id="mode-delete-btn" class="action-btn secondary-btn" onclick="setMode('delete')"
+                    style="background-color: #d32f2f; margin-top: 10px;">❌ Supprimer Nœud</button>
+
+                <!-- Actions sur les Arêtes -->
+                <h4 style="margin-top: 20px; margin-bottom: 10px; color: #2196F3; font-size: 0.95em;">🔗 Actions sur les
+                    Arêtes</h4>
+                <button id="mode-add-edge-btn" class="action-btn primary-btn" onclick="setMode('addEdge')"
+                    style="background-color: #2196F3;">➕ Ajouter Arête</button>
+                <button id="mode-delete-edge-btn" class="action-btn secondary-btn" onclick="setMode('deleteEdge')"
+                    style="background-color: #d32f2f; margin-top: 10px;">❌ Supprimer Arête</button>
+
+                <!-- Actions sur les Contraintes (Section distincte) -->
+                <h4
+                    style="margin-top: 20px; margin-bottom: 10px; color: #ff5722; font-size: 0.95em; border-top: 2px solid #ff5722; padding-top: 15px;">
+                    ⚠️ Gestion des Contraintes</h4>
+                <button id="mode-constraint-btn" class="action-btn secondary-btn" onclick="setMode('addConstraint')"
+                    style="background-color: #ff5722;">➕ Ajouter Contrainte</button>
+                <button id="reset-constraints-btn" class="action-btn secondary-btn" onclick="resetConstraints()"
+                    style="background-color: #e64a19; margin-top: 10px;">🗑️ Enlever toutes les contraintes</button>
+
+                <!-- Désactivation du Mode -->
+                <h4 style="margin-top: 20px; margin-bottom: 10px; color: #666; font-size: 0.95em;">⚙️ Contrôle</h4>
+                <button id="mode-none-btn" class="action-btn" onclick="setMode('none')"
+                    style="background-color: #666;">🚫 Désactiver Mode</button>
+
+                <p id="mode-status"
+                    style="margin-top: 15px; font-weight: bold; color: #3f51b5; padding: 10px; background-color: #f0f0f0; border-radius: 4px;">
+                    Mode actuel: 🚫 Aucun</p>
+            </div>
+
+            <section class="control-box">
+                <h2>1. Chemin le plus court (Dijkstra)</h2>
+                <div class="input-group">
+                    <label for="source-select">Départ (Source) :</label>
+                    <select id="source-select"></select>
+                </div>
+                <div class="input-group">
+                    <label for="dest-select">Arrivée (Destination) :</label>
+                    <select id="dest-select"></select>
+                </div>
+                <button id="dijkstra-btn" class="action-btn primary-btn">
+                    🚗 Calculer l'itinéraire
+                </button>
+            </section>
+
+            <section class="control-box">
+                <h2>2. Assignation (Coloriage)</h2>
+                <p>Assigner des jours/équipes aux points de collecte.</p>
+                <button id="coloring-btn" class="action-btn secondary-btn">
+                    🎨 Lancer le coloriage
+                </button>
+            </section>
+
+            <section class="control-box">
+                <h2>Résultats et Légende</h2>
+                <div id="results-output">
+                    <p class="status-message">Cliquez sur un bouton pour commencer l'analyse.</p>
+                </div>
+                <div id="legend"></div>
+            </section>
+        </aside>
+
+        <main class="graph-area">
+            <h2>Visualisation du Quartier</h2>
+            <svg id="wastegraph-svg" width="600" height="500"></svg>
+        </main>
+    </div>
+
+    <script src="../javascript/app.js?v=4"></script>
+</body>
+
+</html>
