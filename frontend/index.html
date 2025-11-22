@@ -11,10 +11,10 @@
 <body>
 
     <header>
-        <h1>WasteGraph 🗑️</h1>
+        <h1>WasteGraph </h1>
         <p>Visualisation et optimisation des itinéraires de collecte par la Théorie des Graphes.</p>
         <button class="action-btn" onclick="resetGraph()"
-            style="background-color: #d32f2f; color: white; width: auto; padding: 5px 10px; margin-top: 5px;">🔄
+            style="background-color: #d32f2f; color: white; width: auto; padding: 5px 10px; margin-top: 5px;">
             Réinitialiser le Graphe</button>
     </header>
 
@@ -27,36 +27,36 @@
                 <h3>Édition du Graphe</h3>
 
                 <!-- Actions sur les Nœuds -->
-                <h4 style="margin-top: 15px; margin-bottom: 10px; color: #4caf50; font-size: 0.95em;">🔵 Actions sur les
+                <h4 style="margin-top: 15px; margin-bottom: 10px; color: #4caf50; font-size: 0.95em;"> Actions sur les
                     Nœuds</h4>
-                <button id="mode-add-btn" class="action-btn primary-btn" onclick="setMode('add')">➕ Ajouter
+                <button id="mode-add-btn" class="action-btn primary-btn" onclick="setMode('add')"> Ajouter
                     Nœud</button>
                 <button id="mode-rename-btn" class="action-btn primary-btn" onclick="setMode('rename')"
-                    style="background-color: #ff9800; margin-top: 10px;">✏️ Renommer Nœud</button>
+                    style="background-color: #ff9800; margin-top: 10px;"> Renommer Nœud</button>
                 <button id="mode-delete-btn" class="action-btn secondary-btn" onclick="setMode('delete')"
-                    style="background-color: #d32f2f; margin-top: 10px;">❌ Supprimer Nœud</button>
+                    style="background-color: #d32f2f; margin-top: 10px;"> Supprimer Nœud</button>
 
                 <!-- Actions sur les Arêtes -->
-                <h4 style="margin-top: 20px; margin-bottom: 10px; color: #2196F3; font-size: 0.95em;">🔗 Actions sur les
+                <h4 style="margin-top: 20px; margin-bottom: 10px; color: #2196F3; font-size: 0.95em;"> Actions sur les
                     Arêtes</h4>
                 <button id="mode-add-edge-btn" class="action-btn primary-btn" onclick="setMode('addEdge')"
-                    style="background-color: #2196F3;">➕ Ajouter Arête</button>
+                    style="background-color: #2196F3;"> Ajouter Arête</button>
                 <button id="mode-delete-edge-btn" class="action-btn secondary-btn" onclick="setMode('deleteEdge')"
-                    style="background-color: #d32f2f; margin-top: 10px;">❌ Supprimer Arête</button>
+                    style="background-color: #d32f2f; margin-top: 10px;"> Supprimer Arête</button>
 
                 <!-- Actions sur les Contraintes (Section distincte) -->
                 <h4
                     style="margin-top: 20px; margin-bottom: 10px; color: #ff5722; font-size: 0.95em; border-top: 2px solid #ff5722; padding-top: 15px;">
-                    ⚠️ Gestion des Contraintes</h4>
+                     Gestion des Contraintes</h4>
                 <button id="mode-constraint-btn" class="action-btn secondary-btn" onclick="setMode('addConstraint')"
-                    style="background-color: #ff5722;">➕ Ajouter Contrainte</button>
+                    style="background-color: #ff5722;"> Ajouter Contrainte</button>
                 <button id="reset-constraints-btn" class="action-btn secondary-btn" onclick="resetConstraints()"
-                    style="background-color: #e64a19; margin-top: 10px;">🗑️ Enlever toutes les contraintes</button>
+                    style="background-color: #e64a19; margin-top: 10px;"> Enlever toutes les contraintes</button>
 
                 <!-- Désactivation du Mode -->
-                <h4 style="margin-top: 20px; margin-bottom: 10px; color: #666; font-size: 0.95em;">⚙️ Contrôle</h4>
+                <h4 style="margin-top: 20px; margin-bottom: 10px; color: #666; font-size: 0.95em;"> Contrôle</h4>
                 <button id="mode-none-btn" class="action-btn" onclick="setMode('none')"
-                    style="background-color: #666;">🚫 Désactiver Mode</button>
+                    style="background-color: #666;"> Désactiver Mode</button>
 
                 <p id="mode-status"
                     style="margin-top: 15px; font-weight: bold; color: #3f51b5; padding: 10px; background-color: #f0f0f0; border-radius: 4px;">
@@ -74,7 +74,7 @@
                     <select id="dest-select"></select>
                 </div>
                 <button id="dijkstra-btn" class="action-btn primary-btn">
-                    🚗 Calculer l'itinéraire
+                     Calculer l'itinéraire
                 </button>
             </section>
 
@@ -82,7 +82,7 @@
                 <h2>2. Assignation (Coloriage)</h2>
                 <p>Assigner des jours/équipes aux points de collecte.</p>
                 <button id="coloring-btn" class="action-btn secondary-btn">
-                    🎨 Lancer le coloriage
+                     Lancer le coloriage
                 </button>
             </section>
 
