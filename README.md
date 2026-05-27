@@ -32,9 +32,10 @@ Avant de commencer, assurez-vous d'avoir installé :
 1. Cloner le projet
   Bash
     git clone https://github.com/RASOLONDRAIBE360/myProject_TG.git
+   
     cd myProject_TG
 
-2. Configurer l'environnement virtuel
+3. Configurer l'environnement virtuel
   Bash
     # Création
     python -m venv venv_temp
@@ -45,7 +46,7 @@ Avant de commencer, assurez-vous d'avoir installé :
     # Activation (Mac/Linux)
     source venv_temp/bin/activate
 
-3. Installer les dépendances
+4. Installer les dépendances
   Bash
     pip install -r requirements.txt
     (Le fichier requirements.txt doit contenir : Flask, psycopg2-binary, networkx)
