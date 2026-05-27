@@ -31,8 +31,8 @@ Avant de commencer, assurez-vous d'avoir installé :
 
 1. Cloner le projet
   Bash
-    git clone https://github.com/votre-utilisateur/wastegraph.git
-    cd wastegraph
+    git clone https://github.com/RASOLONDRAIBE360/myProject_TG.git
+    cd myProject_TG
 
 2. Configurer l'environnement virtuel
   Bash
